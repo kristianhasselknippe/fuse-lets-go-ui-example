@@ -1,0 +1,18 @@
+<Panel ux:Class="LetsGo.CounterControl" Color="#1A1A1A" Height="50">
+	<int ux:Property="Value" />
+	<JavaScript>
+		exports.label = this.Value.map(function(x){return x+"";});
+		exports.increment = function() {
+			this.Value.value += 1;
+		}.bind(this);
+		exports.decrement = function() {
+		if (this.Value.value == 0) return;
+			this.Value.value -= 1;
+		}.bind(this);	
+	</JavaScript>
+	<Grid ColumnCount="3">
+		<fa_minus Clicked="{decrement}" Alignment="Center"/>
+		<Text Value="{label}" Alignment="Center" Color="White"/>
+		<fa_plus Clicked="{increment}" Alignment="Center"/>
+	</Grid>
+</Panel>

@@ -1,0 +1,59 @@
+<App>
+	<Panel Color="Black">
+		<float4 ux:Global="ThemeColor" ux:Value="#A14CFF" />
+
+		<StackPanel ux:Class="LetsGo.DestinationCard" Margin="24,2" Color="#191919" Padding="20">
+			<string ux:Property="Type" />
+			<string ux:Property="Route" />
+			<string ux:Property="Airport" />
+			<LetsGo.CenterText Value="{Property Type}" />
+			<LetsGo.CenterText Value="{Property Route}" Color="White" FontSize="28"/>
+			<LetsGo.CenterText Value="{Property Airport}" Color="#bbb" FontSize="14"/>
+		</StackPanel>
+
+		<Grid Rows="64,1*">
+			<Grid ColumnCount="3">
+				<fa_bars Color="White" FontSize="24" Alignment="CenterLeft" Margin="16"/>
+				<Text Value="Flight Tickets" Color="White" FontSize="18" Alignment="Center"/>
+			</Grid>
+
+			<StackPanel Color="#151515">
+				<Text ux:Class="LetsGo.CenterText" Alignment="Center"/>
+				<LetsGo.SelectionControl Margin="0,20" />
+
+				<Panel>
+					<Circle Color="ThemeColor" Width="36" Height="36">
+						<fa_arrow_down Alignment="Center" Color="White" FontSize="18"/>
+					</Circle>
+					<StackPanel>
+						<LetsGo.DestinationCard Type="From" Route="DEL - DELHI" Airport="Indira Gandhi International Airport"/>
+						<LetsGo.DestinationCard Type="To" Route="BLR - BANGALORE" Airport="Kempegowda International Airport"/>
+					</StackPanel>
+				</Panel>
+
+				<Grid ColumnCount="2" Margin="20,20" Height="120" Color="#111">
+					<Grid RowCount="3" Color="#151515" Margin="0,2,2,2">
+						<Text Value="Departure" Alignment="CenterLeft"/>
+						<Text Value="08 SEP'15" Alignment="CenterLeft" FontSize="30" Color="White"/>
+						<Text Value="Tuesday" Alignment="CenterLeft"/>
+					</Grid>
+					<Grid RowCount="3" Color="#151515" Margin="2,2,0,2">
+						<Text Value="Return" Alignment="CenterRight"/>
+						<Text Value="23 SEP'15" Alignment="CenterRight" FontSize="30" Color="White"/>
+						<Text Value="Friday" Alignment="CenterRight"/>
+					</Grid>
+				</Grid>
+
+				<Grid ColumnCount="3" RowCount="2" Margin="20">
+					<Text Value="Adults" />
+					<Text Value="Children" />
+					<Text Value="Infants" />
+					
+					<LetsGo.CounterControl Margin="1"/>
+					<LetsGo.CounterControl Margin="1"/>
+					<LetsGo.CounterControl Margin="1"/>
+				</Grid>
+			</StackPanel>
+		</Grid>
+	</Panel>
+</App>
